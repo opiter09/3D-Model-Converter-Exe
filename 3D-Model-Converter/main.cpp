@@ -38,9 +38,9 @@ void loadNode(aiNode* node, int parentIndex) {
 	nodes[newParentIndex].setChildIndices(childIndices);
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 	Assimp::Importer importer;
-	const aiScene* scene = importer.ReadFile("sonic.fbx", 0);
+	const aiScene* scene = importer.ReadFile(argv[1], 0);
 
 	int meshCount = scene->mNumMeshes;
 	meshes = (CMesh*)malloc(sizeof(CMesh) * meshCount);
